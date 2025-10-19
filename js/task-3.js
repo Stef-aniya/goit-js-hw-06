@@ -3,19 +3,19 @@
 class StringBuilder{
     #value
     constructor(initialValue){
-        this.#value = initialValue
+        this.#value = initialValue;
     }
     getValue(){
-        return this.#value
+        return this.#value;
     }
     padEnd(str){
-        return this.#value + str
+        this.#value + str;
     }
     padStart(str){
-        return str + this.#value
+        str + this.#value;
     }
     padBoth(str){
-        return str + this.#value + str
+        str + this.#value + str;
     }
 }
 const builder = new StringBuilder(".");
