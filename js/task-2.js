@@ -10,10 +10,14 @@ class Storage{
         return this.#items
     }
     addItem(newItem){
-        return newItem + this.#items
+        newItem = this.#items
+        return newItem.push(this.#items)
     }
     removeItem(itemToRemove){
-        return this.#items - itemToRemove
+        const indexItem = this.#items.indexOf(itemToRemove)
+        if (indexItem !== -1){
+            this.#items.splice(indexItem,1)
+        }
     }
 }
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);

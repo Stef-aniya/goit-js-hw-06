@@ -13,13 +13,15 @@ const customer = {
         return this.discount;
     },
     setDiscount(value) {
-        value -= this.discount;
+        let setValue = value > 1 ? value / 100 : value;
+        this.discount = setValue;
     },
     getOrders() {
         return this.orders;
     },
     addOrder(cost, order) {
-        this.balance -= cost - this.discount;
+        const discountCost = cost * (1- this.discount)
+        this.balance -= discountCost;
         this.orders.push(order);
     },
   // Change code above this line
